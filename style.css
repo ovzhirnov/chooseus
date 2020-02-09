@@ -1,0 +1,985 @@
+@charset "windows-1251";
+/* CSS Document */
+
+
+body {
+       background: url(images/backgrnd.jpg) #ffffff fixed;
+		background-color: #ecebe8;
+        color: #fff;
+        font-family: Arial, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+		}
+		
+#main_body
+{
+	height:100%;
+	width:100%;
+/*    	opacity: 1;filter:alpha(opacity=100);zoom:1;
+	 	z-index: 1;*/
+}
+
+
+#overlay {
+position: fixed;
+top: 0px;
+left: 0px;
+background: #000;
+opacity: 0.7;
+z-index: 9000;
+width: 100%;
+height: 100%;
+display: none;
+}
+
+#close_btn
+{
+	position:absolute;
+	top:3px;
+	right:3px;
+	cursor:pointer;
+}
+
+#img_close_btn
+{
+	position:absolute;
+	top:40px;
+	right:40px;
+	cursor:pointer;
+}
+ 
+.zoomin
+{
+	cursor: -moz-zoom-in;
+}
+
+.show_big_img
+{
+padding:10px 10px 10px 10px;
+border: 1px solid #e8e8e8;
+display: none;
+z-index: 9001;
+box-shadow:0px 0px 10px 5px #fff;
+background: #fdfdfd;
+cursor:pointer;
+	cursor: -moz-zoom-out;
+}
+
+#makeorder
+{
+color:#333;
+font-family:Verdana, Geneva, sans-serif;
+font-size:0.8em;
+text-align:justify;
+padding:30px 10px 10px 10px;
+width: 300px;
+height: 480px;
+border: 1px solid #e8e8e8;
+background:#F2cCaA;
+display: none;
+z-index: 9001;
+box-shadow:0px 0px 10px 5px #fff;
+}
+
+#callback
+{
+color:#333;
+font-family:Verdana, Geneva, sans-serif;
+font-size:0.8em;
+text-align:justify;
+padding:30px 10px 10px 10px;
+width: 300px;
+height: 400px;
+border: 1px solid #e8e8e8;
+background:#F2cCaA;
+display: none;
+z-index: 9001;
+box-shadow:0px 0px 10px 5px #fff;
+}
+
+#about {
+color:#333;
+font-family:Verdana, Geneva, sans-serif;
+font-size:0.8em;
+text-align:justify;
+padding:30px 10px 10px 10px;
+width: 500px;
+height: 330px;
+border: 1px solid #e8e8e8;
+background: #fdfdfd;
+display: none;
+z-index: 9001;
+box-shadow:0px 0px 10px 5px #fff;
+}
+
+#howwework {
+color:#333;
+font-family:Verdana, Geneva, sans-serif;
+font-size:0.8em;
+text-align:justify;
+padding:30px 10px 10px 10px;
+width: 500px;
+height: 450px;
+border: 1px solid #e8e8e8;
+background: #fdfdfd;
+display: none;
+z-index: 9001;
+box-shadow:0px 0px 10px 5px #fff;
+}
+
+#paying {
+color:#333;
+font-family:Verdana, Geneva, sans-serif;
+font-size:0.8em;
+text-align:justify;
+padding:30px 10px 10px 10px;
+width: 600px;
+height: 650px;
+border: 1px solid #e8e8e8;
+background: #fdfdfd;
+display: none;
+z-index: 9001;
+box-shadow:0px 0px 10px 5px #fff;
+}
+
+#backfeed {
+color:#333;
+font-family:Verdana, Geneva, sans-serif;
+font-size:0.8em;
+text-align:justify;
+padding:30px 10px 10px 10px;
+width: 500px;
+height: 200px;
+border: 1px solid #e8e8e8;
+background: #fdfdfd;
+display: none;
+z-index: 9001;
+box-shadow:0px 0px 10px 5px #fff;
+}
+
+#confidential
+{
+color:#333;
+font-family:Verdana, Geneva, sans-serif;
+font-size:0.8em;
+text-align:justify;
+padding:30px 10px 10px 10px;
+width: 550px;
+height: 350px;
+border: 1px solid #e8e8e8;
+background: #fdfdfd;
+display: none;
+z-index: 9001;
+box-shadow:0px 0px 10px 5px #fff;
+}
+
+h1 a, h1 a:visited
+{
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:1.2em;
+	font-weight:bold;
+	text-decoration:none;
+	color:#D34425;
+	text-shadow:#000 1px 1px 0.5px;
+
+}
+h1 a:hover
+{
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:1.2em;
+	font-weight:bold;
+	text-decoration:none;
+	color:#D38825;
+	text-shadow:#000 1px 1px 0.5px;
+
+}
+.head {
+	padding:20px 0 0 40px;
+}
+
+.head a, .head a:visited
+{
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:2.4em;
+	font-weight:bold;
+	text-decoration:none;
+	color:#D34425;
+	text-shadow:#000 1px 1px 0.5px;
+
+}
+
+.head a:hover
+{
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:2.4em;
+	font-weight:bold;
+	text-decoration:none;
+	color:#D38825;
+	text-shadow:#000 1px 1px 0.5px;
+	
+}
+
+.underhead
+{
+	padding:0px 0 0 60px;
+	color:#fff;
+	font-family:Tahoma, Geneva, sans-serif;
+	text-shadow:#000 0.5px 0.5px 0.5px;
+}
+
+.data
+	{color:#0000CC;
+	font-size:16px;
+	font-family:"Times New Roman", Times, serif;
+	font-weight:bold;
+	background-color:#EEEEEE;}
+.progs
+	{color:#000099;
+	font-size:10px;
+	font-family:Georgia, "Times New Roman", Times, serif;}
+.progs_h
+	{color:#0066FF;
+	font-size:14px;
+	font-family:"Courier New", Courier, monospace;}
+.mnu_header
+	{color:#5500FF;
+	font-size:12px;
+	font-weight:bold;
+	font-family:Georgia, "Times New Roman", Times, serif;	
+	}
+.menu ul
+{
+	margin:5px 0 0 -30px;
+	text-align:center;
+	list-style-type: none;
+
+}
+.menu ul li a, .menu ul li a:visited
+	{
+	color:#fff;
+	display:block;
+	background:url(images/mnu_but_up.png) no-repeat;
+	padding:0 9px 10px 0;
+	text-decoration:none;
+	font-size:0.97em;
+	font-weight:bold;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	text-shadow:#333 1px 1px 0.5px;
+}
+
+.menu ul li a:hover
+	{color:#fff;
+	display:block;
+	background:url(images/mnu_but_down.png) no-repeat;
+	text-decoration:none;
+	font-size:0.97em;
+	font-weight:bold;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	text-shadow:#000 1px 1px 0.5px;
+}
+
+.menu_r ul
+{
+	margin:5px 0 0 -30px;
+	text-align:center;
+	list-style-type: none;
+
+}
+.menu_r ul li a, .menu_r ul li a:visited
+	{
+	color:#fff;
+	display:block;
+	background:url(images/mnu_but_up_r.png) no-repeat;
+	padding:0px 0px 10px 0px;
+	text-decoration:none;
+	font-size:16px;
+	font-weight:bold;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	text-shadow:#333 1px 1px 0.5px;
+}
+
+.menu_r ul li a:hover
+	{color:#fff;
+	display:block;
+	background:url(images/mnu_but_down_r.png) no-repeat;
+	text-decoration:none;
+	font-size:16px;
+	font-weight:bold;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	text-shadow:#000 1px 1px 0.5px;
+}
+
+.raspr
+{
+	height:40px;
+	width:40px;
+	margin:-35px 0 0 -30px;
+  	background: url(images/1.gif) no-repeat center center;  
+}
+
+.menu_b a, .menu_b a:visited
+	{color:#FFFFFF;
+	text-decoration:none;
+	text-align:center;
+	font-size:11px;
+	font-family:Georgia, "Times New Roman", Times, serif;}
+
+.menu_b a:hover
+	{color:#aaaaFF;
+	text-decoration:none;
+	text-align:center;
+	font-size:11px;
+	font-family:Georgia, "Times New Roman", Times, serif;}
+
+.pres_title, .pres_title a, .pres_title a:visited
+	{		
+	color:#FFffFF;
+	text-decoration:none;
+	font-size:12px;
+	font-family:Tahoma, Wingdings;
+	padding: 0px 0px 0px 10px;}
+.pres_title a:hover
+	{color:#69F;
+	text-decoration:none;
+	font-size:12px;
+	font-family:Tahoma, Wingdings;
+	padding: 0px 0px 0px 10px;}
+
+.about_films
+	{color:#000000;
+	vertical-align:top;
+	text-decoration:none;
+	font-size:16px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	padding: 0 0 0 10px;
+	}
+.about_films a, .about_films a:visited
+	{
+	font-weight:bold;
+	top:20px;
+	color:#e00;
+	font-size:16px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+.about_films a:hover 
+	{
+	font-weight:bold;
+	color:#a0a;
+	font-size:16px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+.dload_films
+	{color:#50f;
+	vertical-align:top;
+	text-decoration:none;
+	font-size:14px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	padding: 0px 10px 0px 10px;}
+.dload_films a, .dload_films a:visited
+	{color:#f2f;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:14px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+.dload_films a:hover
+	{color:#22f;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:14px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+.listing
+{
+	text-align:right;
+}
+
+.listing ul
+{
+	list-style-type: none;
+}
+
+.listing ul li
+{
+	background-color: #C6C6A8;
+	padding: 0 0 0 0;
+	border: 1px solid #333;
+	margin-right: 5px;
+	width:20px;
+	display:inline-block;
+	text-align:center;
+	  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+box-shadow:0px 0px 0.5px 1px #666;
+}
+
+.listing ul li a, .listing ul li a:visited
+{
+	display:block;
+}
+
+.listing ul li a:hover
+{
+	display:block;
+	  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+	box-shadow:0px 0px 0.5px 1px #fff;
+
+}
+
+#ref
+	{color:#006;
+	text-decoration:none;
+	font-size:12px;
+	font-family:Tahoma, Wingdings;
+}
+
+#pres_ref
+	{color:#f33;
+	text-decoration:none;
+	font-size:14px;
+	font-family:Tahoma, Wingdings;}
+.ref_ssil
+	{color:#6666ff;
+	text-decoration:none;
+	font-size:10px;
+	font-family:Tahoma, Wingdings;}
+.ref_ssil a, .ref_ssil a:visited
+	{color:#666666;
+	text-decoration:none;
+	font-size:10px;
+	font-family:Tahoma, Wingdings;}
+.ref_ssil a:hover
+	{color:#6666ff;
+	text-decoration:none;
+	font-size:10px;
+	font-family:Tahoma, Wingdings;}
+
+.footer
+{
+
+}
+
+.footprint 
+{
+		height:20px;
+		background-image:url(images/pres_title.png);
+	    color: #444;
+        font-size: 12px;
+        text-align: center;
+		font-family:Tahoma, Wingdings;
+		text-shadow:#000 1px 1px 0.5px;
+}
+.footprint a
+{
+        color: #fff;
+        font-size: 12px;
+		text-align:center;
+		font-family:Tahoma, Wingdings;
+		font-weight:bold;
+ 		text-decoration:none;
+		text-shadow:#000 1px 1px 0.5px;
+		bottom:3px;
+}
+
+.blog
+{
+background:#ddddff;
+color:#000;
+width:100%;
+text-align:justify;
+font-family:Tahoma, Geneva, sans-serif;
+font-size:14px;
+padding: 10px 10px 10px 10px;
+vertical-align:top;
+}
+
+.blog_tul
+{
+background:#ddddff;
+color:#000;
+text-align:center;
+font-family:Tahoma, Geneva, sans-serif;
+font-size:14px;
+padding: 10px 10px 10px 10px;
+vertical-align:top;
+}
+
+.title_mnu
+{
+		vertical-align:middle;
+		width:100%;
+		height:30px;
+		background-image:url(images/pres_title.png);
+        text-align: center;
+        color: #fff;
+		font-weight:bold;
+		font-family:Tahoma, Geneva, sans-serif;
+		text-shadow:#000 1px 1px 0.5px;
+		margin-top:-11px;
+}
+
+.title_mnu h1
+{
+        font-size: 1em;
+}
+.np
+	{color:#ffffFF;
+    text-align: center;
+	font-size:12px;
+	font-family:Georgia, "Times New Roman", Times, serif;}
+
+.novinki a, .novinki a:visited
+{
+	text-decoration:none;
+	font-size:0.8em;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#06F;
+}
+.novinki a:hover
+{
+	text-decoration:none;
+	font-size:0.8em;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#01F;
+}
+	
+.search 
+	{
+		position:relative;
+		top:0px;
+		left:0px;
+		color:#009;
+		font-size:12px;
+		font-family:Tahoma, Geneva, sans-serif;
+		width:200px;
+	}
+
+.blinds_name
+	{
+		text-align:center;
+		color:#933;
+		font-size:1.7em;
+		text-shadow:#000 0.5px 0.5px 0.2px;
+	}
+	
+	
+.maker_img
+{
+	padding:20px 10px 0 30px;
+	float:left;
+}
+
+.maker
+{
+	padding-top:30px;
+	float:left;
+	color:#5c98d6;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:1.2em;
+	text-shadow:#000 0.5px 0.5px 0.1px;
+
+}
+
+.kachestvo_img
+{
+	padding:15px 10px 0 80px;
+	float:left;
+}
+
+.kachestvo
+{
+	padding-top:30px;
+	color:#d1432d;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:1.2em;
+	text-shadow:#000 0.5px 0.5px 0.1px;
+	
+}
+
+.confid
+{
+	padding-top:10px;
+	text-align:center;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#006;
+	font-size:1em;
+}
+
+.confid a, .confid a:visited
+{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:0.8em;
+	color:#333;
+}
+
+.foot_cont
+{
+	text-align:right;
+	margin:-40px 20px 20px 0;
+}
+
+.foot_cont a, .foot_cont a:visited
+{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:1em;
+	color:#339;
+}
+
+.make_order
+{
+	position:relative;
+	padding-top:40px;
+	padding-left:100px;
+}
+
+.undertext
+{
+	color:#666;
+	font-size:0.7em;
+	padding-top:15px;
+}
+
+
+
+.prod_about
+{
+	padding:10px 10px 10px 10px;
+	text-align:left;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:0.8em;
+	color:#006;
+}
+
+.prod_about h1
+{
+	font-size:1.3em;
+}
+
+.prices
+{
+	padding-top:20px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:1em;
+	color:#333;
+	text-align:center;
+}
+
+.formazakaza {
+  width: 300px;
+  padding-bottom: 15px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 21px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 0 1px 21px rgba(0, 0, 0, 0.49);
+  box-shadow: 0 1px 21px rgba(0, 0, 0, 0.49);
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #ffffff), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(bottom, #ffffff 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(bottom, #ffffff 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(bottom, #ffffff 0%, #ffffff 100%);
+  background-image: linear-gradient(bottom, #ffffff 0%, #ffffff 100%);
+  text-align: center;
+}
+
+.formazakaza
+{
+	padding-top:20px;
+}
+
+.formazakaza input
+{
+  width: 244px;
+  height: 40px;
+  border: 1px solid rgba(156, 95, 0, 0.56);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.52);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.52);
+  padding-left: 45px;
+  margin-bottom:10px;
+  color: #8b8b8b;
+  font-family: "Arial";
+  font-size: 14px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.FormFio input {
+  background: url("/images/input-name-icon.png") 10px no-repeat;
+}
+.FormPhone input {
+  background: url("/images/input-phone-icon.png") 10px no-repeat;
+}
+.FormMail input {
+  background: url("/images/input-email-icon.png") 10px no-repeat;
+}
+.FormAddress input {
+  background: url("/images/input-adress-icon.png") 10px no-repeat;
+}
+.knopka button {
+  background: url("/images/button-bg.png") no-repeat;
+  width: 211px;
+  height: 55px;
+  padding-bottom: 5px;
+  border: none;
+  color: white;
+  font-family: "Arial";
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+transition: all 0.1s ease 0s;
+-o-transition: all 0.1s ease 0s;
+-webkit-transition: all 0.1s ease 0s;
+-moz-transition: all 0.1s ease 0s;
+	cursor:pointer;
+}
+
+.knopka button:HOVER{
+opacity:0.8;
+}
+
+.callback
+{
+  background: url("/images/callback.png") no-repeat;
+  width: 160px;
+  height: 32px;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.callback:HOVER
+{
+opacity:0.8;
+}
+
+.SKU_Mater
+{
+    width:165px;
+    height:21px;
+    background: white !important;
+    border:1px solid #dab99f;
+    border-radius: 7px;    
+    overflow: hidden;
+}
+
+.SKU_Mater select{
+    margin-left: 0;
+    margin-top: 0;
+    width: 185px;
+    z-index: -10;
+    border: none;
+    background: white !important;
+    background: url(images/selecttt.png) white no-repeat !important;
+    background-position: 150px 10px !important;
+    outline:none;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:1.1em;
+    color:#4B4E3F;
+	text-align:center;
+}
+
+.SKU
+{
+    width:80px;
+    height:21px;
+    background: white !important;
+    border:1px solid #dab99f;
+    border-radius: 7px;    
+    overflow: hidden;
+}
+
+.SKU select{
+	float:left;
+    margin-left: 0;
+    margin-top: 0;
+    width: 100px;
+    z-index: -10;
+    border: none;
+    background: white !important;
+    background: url(images/selecttt.png) white no-repeat !important;
+    background-position: 65px 10px !important;
+    outline:none;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:1.0em;
+    color:#4B4E3F;
+	text-align:center;
+}
+
+.prod_price
+{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:0.9em;
+	color:#352F6A;
+}
+
+#price
+{
+	font-size:1.5em;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#F00;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#price-pokr
+{
+	display:inline;
+	font-size:1.2em;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#F00;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.otzivi
+{
+	text-align:left;
+	padding:10px 30px 0 30px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+#otz_data
+{
+	font-size:10px;
+}
+
+.add-otziv
+{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#333;
+}
+
+.otzivi-rightcol
+{
+	text-align:left;
+	color:#222;
+	font-size:12px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	padding:5px 5px 0 5px;
+	
+}
+
+.akcija
+{
+	position:relative;
+	top:-95px;
+	right:-255px;
+	height:50px;
+	background:url(images/sale.png) no-repeat;
+}
+
+.akcija-text
+{
+	font-size:1.3em;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#F05;
+	font-weight:bold;
+	text-decoration:none;
+/*	text-shadow:#000 0.3px 0.3px 0.5px;*/
+	text-align:center;
+}
+
+.main_page_pic, .main_page_pic a , .main_page_pic a:visited
+{
+	padding:0 0 40px 0;
+	text-align:center;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-size:1em;
+	color:#744;
+	text-decoration:none;
+}
+
+.main_page_pic a:hover
+{
+	color:#744;
+	text-shadow:#000 0.3px 0.3px 0.3px;
+}
+
+.main_page_pic img
+{
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0 2px 7px rgba(0, 0, 0, 1);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 1);
+}
+
+.dop_page_pic, .dop_page_pic a , .dop_page_pic a:visited
+{
+	padding:0 0 40px 0;
+	text-align:center;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-size:0.9em;
+	color:#744;
+	text-decoration:none;
+}
+
+.dop_page_pic a:hover
+{
+	color:#744;
+	text-shadow:#000 0.3px 0.3px 0.3px;
+}
+
+.dop_page_pic img
+{
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0 2px 7px rgba(0, 0, 0, 1);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 1);
+}
+
+.comment
+{
+	font-family:Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+	font-size:0.9em;
+	text-decoration:none;
+	color:#333;
+	padding:0 0 0 40px;
+}
+
+.freesell
+{
+	color:#a00;
+	font-size:1.1em;
+	font-weight:bold;
+}
+
+.posters
+{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:0.9em;
+	color:#336;
+	margin-top:-20px;
+	width:1000px;
+
+}
+
+#apiposters.posters .item.big
+{width:248px}
+
+#apiposters,#apiproduct
+{color: #339;}

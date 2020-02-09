@@ -1,0 +1,132 @@
+<?php session_start(); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Отзывы-Фотошторы интернет-магазин</title>
+<meta name="Title" content='Ткани для фотоштор' />
+<META http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<META name="description" content="Отзывы-Фотошторы интернет-магазин">
+<META name="keywords" content="Отзывы-Фотошторы интернет-магазин">
+<meta name="revisit-after" content="7 day">
+<META content="index, follow" name="robots">
+<link href="style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="show_block.js"></script>
+<script type="text/javascript" src="valid.js"></script>
+</head>
+<body>
+<div id="main_body" align="center">
+	<?php require ('config.php'); require ("header.php"); ?>			
+	<table border="0" cellpadding="0" cellspacing="0" align="center">	
+		<tr><td width="200" valign="top">
+        				<?php require ("basic_menu.php"); ?>
+			</td>
+		
+			<td width="800" valign="top">
+				<table width='800' border='0' cellpadding='0' cellspacing='0'>
+					<tr><td class="title_mnu"><strong>Отзывы покупателей наших фотоштор</strong></td></tr>
+					<tr><td class="blog">
+                    	<?php 
+                        if ($_POST['pername'] & $_POST['textotziva'])
+	{
+		$pername = $_POST['pername'];
+		$textotziva = $_POST['textotziva'];
+		$textotziva = addslashes($textotziva);
+		$profession = $_POST['profession'];
+		$city = $_POST['city'];
+		$check = $_POST['check'];
+		$sum=$_SESSION['sum'];
+		substr ($pername,0,30);
+		substr ($textotziva,0,1000);
+		substr ($profession,0,30);
+		substr ($city,0,24);
+		if ($check==$sum)
+		{
+			$data = date("d.m.Y");
+			$sql = "INSERT INTO ".$table_name."(pername, profession, city, textotziva, data, status) VALUES (\"$pername\", \"$profession\", \"$city\", \"$textotziva\", \"$data\", \"0\")";
+			$q=Mysql_query($sql, $conn) or die("Запрос не выполнен!"); //отправляем запрос на сервер
+				if ($q) {
+$sql = "ALTER TABLE ".$table_name." ORDER BY `ID` DESC";//сортировка базы по убыванию ID
+$q=Mysql_query($sql, $conn) or die("Запрос не выполнен!"); //отправляем запрос на сервер
+
+  $headers = "Content-type: text/html; charset=windows-1251\r\n";
+  $headers .= "From: webmaster@chooseus.ru";
+						
+						mail("chooseus@yandex.ru","Отзыв покупателя!","Вам оставили новый отзыв, промодерируйте его!",$headers);
+/*
+  $headers = "MIME-Version: 1.0\r\n";
+  $headers .= "Content-type: text/html; charset=windows-1251\r\n";
+  $headers .= "To: $to\r\n";
+  $headers .= "From: chooseus";
+ 
+    require_once ("smtpauth.php");
+	MailSmtp ("chooseus@yandex.ru","Отзыв покупателя!","Вам оставили новый отзыв, промодерируйте его!", $headers);
+*/
+						echo "<font color='#f55' size='+1'>Ваш отзыв принят и после успешной модерации появится в этом разделе!</font><br /><br />";				}
+						else {echo "<font color='#f00' size='+1'>Произошла ошибка записи в базу данных!<br />
+						Пожалуйста, попробуйте повторить!<br /><br /></font><br /><br />";}
+		}
+		else {echo "<font color='#f55' size='+1'>Не верно введено проверочное число,<br>попробуйте еще раз заполнить форму отзыва</font><br />";}
+	}
+
+	$sql = "SELECT * FROM ".$table_name." WHERE `status` = 1";
+	$q=Mysql_query($sql, $conn) or die("Запрос не выполнен!"); //отправляем запрос на сервер
+				echo "<div class='otzivi'>";
+                        while ($zap = mysql_fetch_array($q))
+						{
+							$ID=$zap['ID'];
+							$pername=$zap['pername'];
+							$profession=$zap['profession'];
+							$city=$zap['city'];
+							$textotziva=$zap['textotziva'];
+							$data=$zap['data'];
+
+				
+				echo "<div id='otz_data'>".$data."</div><b>".$pername."</b>";
+                if ($profession<>'')
+                {echo " - ".$profession;}
+                if ($city<>'')
+                {echo " (".$city.")";}
+                echo "<br />".$textotziva."<br /><br />";
+						}
+                echo "</div>";
+                        
+?>
+
+                    	<center><hr />
+                        <div class='add-otziv'>
+                    	Добавить отзыв:<br /><br />
+                        <form action="otzivi.html" name="otziv" method="post">
+					   	<input type="text" size="30" name="pername" placeholder="* Фамилия, имя" class="add-otziv"><br /><br />
+					   	<input type="text" size="30" name="profession" placeholder="Род занятий" class="add-otziv"><br /><br />
+					   	<input type="text" size="30" name="city" placeholder="Город" class="add-otziv"><br /><br />
+					    <br />
+					    <textarea rows='10' cols='50' name='textotziva' placeholder="Напишите Ваш отзыв" class="add-otziv"></textarea><br /><br />
+				    	Введите правильный ответ (защита от роботов):<br />
+						<?php
+						$num1=rand(0,9);
+						$num2=rand(0,9);
+						$sum=$num1+$num2;
+						$_SESSION['sum']=$sum;
+						echo $num1.' + '.$num2.' = ';
+						?>
+						<input type="text" name="check" size="3"/><br /><br />
+    					<input type="submit" value="Отправить">
+						</form>
+                        </div>
+                        <div id='otz_data'>Перед опубликованием все отзывы проходят ручную модерацию!</div>
+                        </center>
+					</td></tr>
+					<tr><td class="title_mnu"></td></tr>
+                </table><br>
+ 			</td>
+			<td width="200" valign="top">
+            	<?php require ("right_col.php"); ?>
+ 
+			</td>
+		</tr>
+	</table>
+	<?php require ("footer.php"); ?>
+</div>
+</body>
+</html>

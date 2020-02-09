@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /prices/
+Disallow: /*.php
+Disallow: /sent.html
+Disallow: /sent-callback.html
+User-agent: MJ12bot
+Disallow: /
+Host: chooseus.ru
+Sitemap: http://chooseus.ru/sitemap.xml

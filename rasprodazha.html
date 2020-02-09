@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php session_start(); ?>
+<html>
+<head>
+<title>Распродажа фотоштор, фототюли, фотопокрывал. Фотошторы распродажа по сниженным ценам.</title>
+<meta name="Title" content='Распродажа фотоштор, фототюли, фотопокрывал. Фотошторы распродажа по сниженным ценам.' />
+<META http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<META name="description" content="Распродажа фотоштор, фототюли, фотопокрывал. Фотошторы распродажа по сниженным ценам.">
+<META name="keywords" content="Распродажа фотоштор, фототюли, фотопокрывал. Фотошторы распродажа по сниженным ценам.">
+<meta name="revisit-after" content="7 day">
+<META content="index, follow" name="robots">
+<link href="style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="show_block.js"></script>
+<script type="text/javascript" src="valid.js"></script>
+</head>
+<body>
+<?php require ('config.php'); ?>
+<div id="main_body" align="center">
+	<?php require ("header.php"); ?>			
+	<table border="0" cellpadding="0" cellspacing="0" align="center">	
+		<tr><td width="200" valign="top">
+				<?php require ("basic_menu.php"); ?>
+			</td>
+		
+			<td width="800" valign="top">
+				<table width='800' border='0' cellpadding='0' cellspacing='0'>
+					<tr><td class="title_mnu">Распродажа</td></tr>
+                </table><br>
+
+				<?php require ("rasprod.php"); ?>
+<div class='prod_about' style='text-align:center;'>
+В разделе Распродажа фотоштор представлена новая, полностью ликвидная продукция, которая осталась от крупных оптовых заказов, но по тем или иным причинам не была востребована заказчиками фотоштор и фотопокрывал. Поэтому Распродажа фотоштор и фотопокрывал предоставляет Вам возможность преобрести новую продукцию по цене ее себестоимости. Заказав на странице Распродажа фотоштор Вы сэкономите до 40% Ваших денег. Не упустите возможность сделать выгодную покупку в категории Распродажа фотоштор, просто оформите заказ на тот товар, что Вам понравился, и в течение 2-3 рабочих дней мы вышлем Вам готовую продукцию с отдела Распродажа фотоштор.
+</div>
+
+ 			</td>
+			<td width="200" valign="top">
+            	<?php require ("right_col.php"); ?>
+ 
+			</td>
+		</tr>
+	</table>
+	  
+	<?php require ("footer.php"); ?>
+</div>
+</body>
+</html>

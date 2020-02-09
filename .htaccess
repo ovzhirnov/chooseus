@@ -1,0 +1,32 @@
+RemoveHandler .html .htm
+AddType application/x-httpd-lsphp .php .htm .html .phtml
+php_value error_reporting E_ALL
+
+RewriteEngine On
+#RewriteRule ^show-([^/]+)-([^/]+)-1\.html$ cloak.html?zapr0=/show&zapr1=$1&zapr2=$2&zapr3=1 [L] #в клоаку
+#RewriteRule ^snow-([^/]+)-([^/]+)-1\.html$ missing.php?zapr0=/show&zapr1=$1&zapr2=$2&zapr3=1 [L] #из клоаки
+#RewriteRule ^show-pokrivala-(\d+)\.html$ missing.php?zapr0=/show&zapr1=pokrivala&zapr2=nature&zapr3=$1 [L] #На время переиндексации
+#RewriteRule ^show-tuli-(\d+)\.html$ missing.php?zapr0=/show&zapr1=tuli&zapr2=all&zapr3=$1 [L]
+#RewriteRule ^show-([^-]+)-(\d+)\.html$ missing.php?zapr0=/show&zapr1=shtory&zapr2=$1&zapr3=$2 [L] #На время переиндексации
+RewriteRule ^show-([^/]+)-([^/]+)-(\d+)\.html$ missing.php?zapr0=/show&zapr1=$1&zapr2=$2&zapr3=$3 [L]
+#RewriteRule ^product_info-(\d+)\.html$ missing.php?zapr0=/product_info&zapr1=?&zapr2=$1 [L]  #На время переиндексации
+RewriteRule ^product_info-([^/]+)-(\d+)\.html$ missing.php?zapr0=/product_info&zapr1=$1&zapr2=$2 [L]
+
+#SetEnvIfNoCase User-Agent "SV1" bad_bot
+#SetEnvIfNoCase User-Agent "Java/1.6.0_04" bad_bot
+#SetEnvIfNoCase User-Agent "^Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)*" bad_bot
+#SetEnvIfNoCase User-Agent "^Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; Touch; MALNJS)" bad_bot
+#SetEnvIfNoCase User-Agent "^Mozilla/5.0 (iPhone; CPU iPhone OS 10_2_1 like Mac OS X) AppleWebKit/602.4.6 (KHTML, like Gecko)*" bad_bot
+
+Order Allow,Deny
+Allow from all
+Deny from env=bad_bot 
+Deny from 35.
+Deny from 146.141, 146.157
+Deny from 104.
+Deny from 130.210, 130.222
+Deny from 146.141, 146.157
+#Deny from 178.127.
+#Deny from 180.
+#Deny from 106.
+#Deny from 115.

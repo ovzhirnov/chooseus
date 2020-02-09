@@ -1,0 +1,118 @@
+<?php 
+	session_start();
+if ( isset( $_POST['zakaz'] ) && $_POST['FormFio1']<>"")
+{
+	$_SESSION['id'] = $_POST['id'];
+    $_SESSION['formfio'] = $_POST['FormFio1'];
+    $_SESSION['formphone'] = $_POST['FormPhone1'];
+    $_SESSION['formmail'] = $_POST['FormMail1'];
+    $_SESSION['formaddress'] = $_POST['FormAddress1'];
+    $_SESSION['zakazcomment'] = $_POST['zakazcomment'];
+	$_SESSION['product'] = $_POST['product'];
+	$_SESSION['name'] = $_POST['name'];
+	$_SESSION['mater'] = $_POST['material'];
+	$_SESSION['shir'] = str_replace('2 х ','',$_POST['shir']);
+	$_SESSION['vis'] = $_POST['vis'];
+	$_SESSION['cena'] = str_replace(' руб.','',$_POST['cena']);
+
+header("Location: ".$_SERVER["REQUEST_URI"]);
+
+} 
+$refer=$_SERVER['HTTP_REFERER'];
+if (!isset( $_POST['zakaz'] ) && strstr($_SERVER['HTTP_REFERER'],"chooseus") && $_SESSION['order']=='true order')
+{
+	$id = $_SESSION['id'];
+    $formfio = $_SESSION['formfio'];
+    $formphone = $_SESSION['formphone'];
+    $formmail = $_SESSION['formmail'];
+    $formaddress = $_SESSION['formaddress'];
+    $zakazcomment = $_SESSION['zakazcomment'];
+	$product = $_SESSION['product'];
+	$name = $_SESSION['name'];
+	$mater = $_SESSION['mater'];
+	$shir = $_SESSION['shir'];
+	$vis = $_SESSION['vis'];
+	$cena = $_SESSION['cena'];
+    session_destroy();
+    $show_message = "<center>Спасибо $formfio. Ваша заявка принята!<br /><br />В ближайшее время наш менеджер свяжется с Вами для подтверждения заказа.<br /><br />Заявка:  $product - $name<br /><br />Материал - $mater<br />";
+//    $show_message = "<center>Спасибо $formfio. Ваша заявка принята!<br /><br />По техническим причинам все заявки, поступившие 10.03.2016г. будут обрабатываться на следующий день,<br />т.е. 11.03.2016г.<br /><br />Наш менеджер свяжется с Вами для подтверждения заказа.<br /><br />Заявка:  $product - $name<br /><br />Материал - $mater<br />";
+    if ($product=='Фотошторы' || $product=='Фототюль' || $product=='Шторы')
+    {$show_message .= "Ширина - 2 х $shir.<br />Высота - $vis";}
+    if ($product=='Римские Фотошторы')
+    {$show_message .= "Ширина - $shir.<br />Высота - $vis";}
+    $show_message .= "<br />Стоимость - $cena руб.<br /><br <br /><br />Напоминаем, что Мы работаем ежедневно с 9:00 до 18:00 по московскому времени<br /><br /></center>";
+     
+  $headers = "Content-type: text/html; charset=windows-1251\r\n";
+  $headers .= "From: webmaster@chooseus.ru";
+ $to = "zov1976@gmail.com";
+ $subject = "New order! - photoblinds";
+ $message = "$product новый заказ.<br /><br />
+ Подробности:<br /><br />
+ ID:$id<br /><br />
+ $product - ".$name."<br /><br />
+ Материал - ".$mater."<br /><br />
+ Ширина - ".$shir.".<br /><br />
+ Высота - ".$vis.".<br /><br />
+ Стоимость - ".$cena." руб.<br /><br />
+ ФИО - ".$formfio."<br /><br />
+ Телефон - ".$formphone."<br /><br />
+ Электронный адрес - ".$formmail."<br /><br />
+ Домашний адрес - ".$formaddress."<br /><br />
+ Комментарий - ".$zakazcomment;
+
+   	mail ($to, $subject, $message, $headers);
+/*  $headers = "MIME-Version: 1.0\r\n";
+  $headers .= "Content-type: text/html; charset=windows-1251\r\n";
+  $headers .= "To: $to\r\n";
+  $headers .= "From: chooseus";
+ 
+    require_once ("smtpauth.php");
+	MailSmtp ($to, $subject, $message, $headers);
+*/
+
+    ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Успешный заказ</title>
+<META http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="show_block.js"></script>
+<script type="text/javascript" src="valid.js"></script>
+</head>
+<body>
+<div id="main_body" align="center">
+	<?php require ('config.php'); require ("header.php"); ?>			
+	<table border="0" height="600">	
+		<tr><td valign="top">
+				<?php require ("basic_menu.php"); ?>
+			</td>
+		
+			<td width="800" valign="top">
+				<table width='800' border='0' cellpadding='0' cellspacing='0'>
+					<tr><td class="title_mnu">Успешный заказ!</td></tr>
+					<tr><td class="blog">
+					<?php echo $show_message; ?>
+
+					</td></tr>
+					<tr><td class="title_mnu"></td></tr>
+                </table><br>
+			</td>
+			<td width="200" valign="top">
+            	<?php require ("right_col.php"); ?>
+ 
+			</td>
+		</tr>
+	</table>
+	  
+	<?php require ("footer.php"); 
+    }
+    else 
+    {echo "<br /><br /><br /><br /><br /><center>У Вас нет доступа к этой странице. Пожалуйста оформите новый заказ.<br /><br /><br />
+    <a href='".$refer."'>Перейти на предыдущую страницу</a></center>";}
+    ?>
+</div>
+</body>
+</html>

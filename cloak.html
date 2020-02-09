@@ -1,0 +1,157 @@
+<?php
+				$zapr[0]=$_GET['zapr0'];
+				$zapr[1]=$_GET['zapr1'];
+				$zapr[2]=$_GET['zapr2'];
+				$zapr[3]=$_GET['zapr3'];
+
+				$do=$zapr[0];
+				$url_product=$zapr[1];
+				$url_category=$zapr[2];
+				$np=$zapr[3];
+
+switch ($url_category)
+{
+case 'kitchen': $categ='Для кухни'; break;
+case 'city': $categ='Города мира'; break;
+case 'art': $categ='Арт'; break;
+case 'nature': $categ='Природа'; break;
+case 'flowers': $categ='Цветы'; break;
+case 'animals': $categ='Животные'; break;
+case 'cartoons': $categ='Для детской'; break;
+case 'all': $categ=''; break;
+case 'uzori': $categ='Узоры'; break;
+case 'venzel': $categ='Вензель'; break;
+case 'geometry': $categ='Геометрия'; break;
+case 'kitch': $categ='Кухня'; break;
+case 'polosi': $categ='Полосы'; break;
+case 'provans': $categ='Прованс'; break;
+case 'kletigor': $categ='Клетка и горошек'; break;
+case 'sredizemnom': $categ='Средиземноморские'; break;
+case 'classic': $categ='Классические'; break;
+case 'newyear': $categ='Новогодние'; break;
+} 
+
+if ($url_product=='pokrivala')
+{$product="Фотопокрывало"; $h1product="Фотопокрывала";}
+if ($url_product=='tuli')
+{$product="Фототюль"; $h1product="Фототюли";}
+if ($url_product=='shtory')
+{$product="Фотошторы"; $h1product="Фотошторы";}
+if ($url_product=='rimshtory')
+{$product="Римские Фотошторы"; $h1product="Римские Фотошторы";}
+if ($url_product=='shtoryclassic')
+{$product="Шторы"; $h1product="Шторы";}
+
+					$titl=$h1product." интернет магазин, ".$h1product." ".$categ." интернет магазин распродажа, ".$h1product." ".$categ." недорого, ".$h1product." ".$categ." 3д интернет магазин, "."Купить ".$h1product." ".$categ." недорого.";
+					$descr=$h1product." интернет магазин, ".$h1product." ".$categ." интернет магазин распродажа, ".$h1product." ".$categ." недорого, ".$h1product." ".$categ." 3д интернет магазин, "."Купить ".$h1product." ".$categ." недорого.";
+					$keyw=$h1product.", интернет магазин, ".$categ.", распродажа, недорого, ".$h1product." 3д интернет магазин, Купить ".$h1product." ".$categ." недорого.";
+                                       
+$urla = "/snow-$zapr[1]-$zapr[2]-1.html";
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title><?php echo $titl; ?></title>
+<meta name="title" content='<?php echo $titl; ?>' />
+<META http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<META name="description" content="<?php echo $descr; ?>">
+<META name="keywords" content="<?php echo $keyw; ?>">
+<meta name="revisit-after" content="7 day">
+<META content="index, follow" name="robots">
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+
+<body>
+<div style="color: #000; ">
+<H1><?php echo $h1product." интернет магазин, ".$h1product." ".$categ." интернет магазин распродажа, ".$h1product." ".$categ." недорого, ".$h1product." ".$categ." 3д интернет магазин, "."Купить ".$h1product." ".$categ." недорого."; ?></H1>
+<H2><?php echo $h1product." интернет магазин, ".$h1product." ".$categ." интернет магазин распродажа, ".$h1product." ".$categ." недорого, ".$h1product." ".$categ." 3д интернет магазин, "."Купить ".$h1product." ".$categ." недорого."; ?></H2>
+<H3><?php echo $h1product." интернет магазин, ".$h1product." ".$categ." интернет магазин распродажа, ".$h1product." ".$categ." недорого, ".$h1product." ".$categ." 3д интернет магазин, "."Купить ".$h1product." ".$categ." недорого."; ?></H3>
+<H4><?php echo $h1product." интернет магазин, ".$h1product." ".$categ." интернет магазин распродажа, ".$h1product." ".$categ." недорого, ".$h1product." ".$categ." 3д интернет магазин, "."Купить ".$h1product." ".$categ." недорого."; ?></H4>
+<H5><?php echo $h1product." интернет магазин, ".$h1product." ".$categ." интернет магазин распродажа, ".$h1product." ".$categ." недорого, ".$h1product." ".$categ." 3д интернет магазин, "."Купить ".$h1product." ".$categ." недорого."; ?></H5>
+<H6><?php echo $h1product." интернет магазин, ".$h1product." ".$categ." интернет магазин распродажа, ".$h1product." ".$categ." недорого, ".$h1product." ".$categ." 3д интернет магазин, "."Купить ".$h1product." ".$categ." недорого."; ?></H6>
+</div>
+<p style="position:absolute; top: 0;left: 0; width: 100%; height: 100%; background-color: #fff; "></p>
+<!--<input type="button" value="вперед" onClick="javascript: document.location.href='<?php echo $urla;?>';"> -->
+<br /><br />
+
+<?php
+require ('config.php');
+
+$table_name = $url_product;
+$sql = "SELECT * FROM ".$table_name." WHERE product='".$product."' AND category='".$categ."'"; //создаем SQL запрос
+if ($categ == '')
+{$sql = "SELECT * FROM ".$table_name." WHERE product='".$product."'";}
+$q=Mysql_query($sql, $conn) or die(); //отправляем запрос на сервер
+$ke=Mysql_num_rows($q); //количество элементов в базе c нужной категорией
+$ks=10; //количество элементов на странице
+
+
+
+// Подсчет количества выводимых страниц в зависимости от количества элементов
+$kolstr=ceil($ke/$ks); //количество страниц, дополненное до следующего целого числа
+
+
+
+// показываем ссылки на все страницы
+echo "<div><ul>";
+$idnp='ref';
+if ($np==1) {$idnp='pres_ref';}
+echo "<li><a id='".$idnp."' href='show-$url_product-$url_category-1.html'>1</a></li>&nbsp;&nbsp;";
+if ($kolstr>10)
+{
+if ($np>=6 & $np<=($kolstr-5))
+{
+for ($s=($np-4);$s<=($np+4);$s++)
+	{
+	if ($s==$np)
+	{echo "<li><a id='pres_ref' href='show-$url_product-$url_category-$s.html'>$s</a></li>";}//текущая страница
+	else 
+	{echo "<li><a id='ref' href='show-$url_product-$url_category-$s.html'>$s</a></li>";}//показываем ссылки на следующие страницы
+	}
+}
+elseif ($np<6)
+{
+for ($s=2;$s<=10;$s++)
+	{
+	if ($s==$np)
+	{echo "<li><a id='pres_ref' href='show-$url_product-$url_category-$s.html'>$s</a></li>";}//текущая страница
+	else 
+	{echo "<li><a id='ref' href='show-$url_product-$url_category-$s.html'>$s</a></li>";}//показываем ссылки на следующие страницы
+	}
+}
+elseif ($np>($kolstr-5))
+{
+for ($s=($kolstr-9);$s<=($kolstr-1);$s++)
+	{
+	if ($s==$np)
+	{echo "<li><a id='pres_ref' href='show-$url_product-$url_category-$s.html'>$s</a></li>";}//текущая страница
+	else 
+	{echo "<li><a id='ref' href='show-$url_product-$url_category-$s.html'>$s</a></li>";}//показываем ссылки на следующие страницы
+	}
+}
+}
+else
+{
+for ($s=2;$s<=$kolstr;$s++)
+	{
+	if ($s==$np)
+	{echo "<li><a id='pres_ref' href='show-$url_product-$url_category-$s.html'>$s</a></li>";}//текущая страница
+	else 
+	{echo "<li><a id='ref' href='show-$url_product-$url_category-$s.html'>$s</a></li>";}//показываем ссылки на следующие страницы
+	}
+
+}
+$idnp='ref';
+if ($np==$kolstr) {$idnp='pres_ref';}
+if ($kolstr>10)
+{echo "&nbsp;&nbsp;<li><a id='".$idnp."' href='show-$url_product-$url_category-$kolstr.html'>$kolstr</a></li>";}
+
+
+
+echo "</ul></div>";	
+?>
+<script  type="text/javascript">
+document.location.href="<?php echo $urla; ?>";
+</script>
+</body>
+</html>

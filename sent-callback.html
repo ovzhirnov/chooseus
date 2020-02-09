@@ -1,0 +1,80 @@
+<?php 
+session_start();
+
+if ( isset( $_POST['callback'] ) && strstr($_SERVER['HTTP_REFERER'],"chooseus") && $_SESSION['ring']=='true ring' && $_POST['FormFio']<>"" && !strstr($_POST['callbackcomment'],"http") && !strstr($_POST['callbackcomment'],"@"))
+{
+
+	$formfio = $_POST['FormFio'];
+    $formphone = $_POST['FormPhone'];
+    $formmail = $_POST['FormMail'];
+    $callbackcomment = $_POST['callbackcomment'];
+    session_destroy();
+	$show_message = "Спасибо $formfio. Ваша заявка принята! В ближайшее время наш менеджер свяжется с Вами!<br /><br />Напоминаем, что Мы работаем ежедневно с 9:00 до 18:00 по московскому времени<br /><br />";
+	
+    
+  $headers = "Content-type: text/html; charset=windows-1251\r\n";
+  $headers .= "From: webmaster@chooseus.ru";
+ $to = "zov1976@gmail.com";
+ $subject = "Call to Visitor about photoblinds";
+ $message = "Посетитель просит перезвонить ему о фотошторах!<br /><br />
+ ФИО - ".$formfio."<br /><br />
+ Телефон - ".$formphone."<br /><br />
+ Электронный адрес - ".$formmail."<br /><br />
+ Комментарий - ".$callbackcomment;
+
+   	mail ($to, $subject, $message, $headers);
+
+/*  $headers = "MIME-Version: 1.0\r\n";
+  $headers .= "Content-type: text/html; charset=windows-1251\r\n";
+  $headers .= "To: $to\r\n";
+  $headers .= "From: chooseus";
+ 
+    require_once ("smtpauth.php");
+	MailSmtp ($to, $subject, $message, $headers);
+*/
+
+    ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Заказан обратный звонок</title>
+<META http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<link href="style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="show_block.js"></script>
+<script type="text/javascript" src="valid.js"></script>
+</head>
+<body>
+<div id="main_body" align="center">
+	<?php require ('config.php'); require ("header.php"); ?>			
+	<table border="0" height="600">	
+		<tr><td valign="top">
+				<?php require ("basic_menu.php"); ?>
+			</td>
+		
+			<td width="800" valign="top">
+				<table width='800' border='0' cellpadding='0' cellspacing='0'>
+					<tr><td class="title_mnu">Заказан обратный звонок!</td></tr>
+					<tr><td class="blog">
+					<center><?php echo $show_message; ?></center>
+
+					</td></tr>
+					<tr><td class="title_mnu"></td></tr>
+                </table><br>
+			</td>
+			<td width="200" valign="top">
+            	<?php require ("right_col.php"); ?>
+ 
+			</td>
+		</tr>
+	</table>
+	  
+	<?php require ("footer.php");  
+    }
+    else 
+    {echo "<br /><br /><br /><br /><br /><center>У Вас нет доступа к этой странице. Пожалуйста оформите заявку заново.</center>";}
+    ?>
+</div>
+</body>
+</html>
