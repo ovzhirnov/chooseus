@@ -1,5 +1,5 @@
-<?php 
-if ($product=="Фотопокрывало")
+<?php //РёР·РјРµРЅРµРЅРёРµ РєРѕРґРёСЂРѕРІРєРё РЅР° UTF-8
+if ($product=="Г”Г®ГІГ®ГЇГ®ГЄГ°Г»ГўГ Г«Г®")
 {
 ?>
 <script language="javascript" type="text/javascript">
@@ -15,17 +15,17 @@ function changepricepokr()
 </script>
 
 <br />
-<div style="color:#930; font-size:16px;"><b>Выберите материал фотопокрывала:</b></div><br />
-<input type="radio" name='material' value="Атлас" onchange="changepricepokr();"/> Атлас <input type="radio" name='material' value="Сатен" onchange="changepricepokr();" /> Сатен <input type="radio" name='material' value="Габардин" onchange="changepricepokr();" /> Габардин<br /><br />
-<div style="color:#930; font-size:16px;"><b>Выберите размеры фотопокрывала:</b></div><br />
-<input type="radio" name='razmer' value="150см х 215см - 3000" onchange="changepricepokr();"/> 150см х 215см - <div id="price-pokr">3000&nbsp;руб.</div><br />
-<input type="radio" name='razmer' value="175см х 215см - 3900" onchange="changepricepokr();"/> 175см х 215см - <div id="price-pokr">4000&nbsp;руб.</div><br />
-<input type="radio" name='razmer' value="215см х 240см - 4200" onchange="changepricepokr();"/> 215см х 240см - <div id="price-pokr">4300&nbsp;руб.</div><br />
+<div style="color:#930; font-size:16px;"><b>Г‚Г»ГЎГҐГ°ГЁГІГҐ Г¬Г ГІГҐГ°ГЁГ Г« ГґГ®ГІГ®ГЇГ®ГЄГ°Г»ГўГ Г«Г :</b></div><br />
+<input type="radio" name='material' value="ГЂГІГ«Г Г±" onchange="changepricepokr();"/> ГЂГІГ«Г Г± <input type="radio" name='material' value="Г‘Г ГІГҐГ­" onchange="changepricepokr();" /> Г‘Г ГІГҐГ­ <input type="radio" name='material' value="ГѓГ ГЎГ Г°Г¤ГЁГ­" onchange="changepricepokr();" /> ГѓГ ГЎГ Г°Г¤ГЁГ­<br /><br />
+<div style="color:#930; font-size:16px;"><b>Г‚Г»ГЎГҐГ°ГЁГІГҐ Г°Г Г§Г¬ГҐГ°Г» ГґГ®ГІГ®ГЇГ®ГЄГ°Г»ГўГ Г«Г :</b></div><br />
+<input type="radio" name='razmer' value="150Г±Г¬ Гµ 215Г±Г¬ - 3000" onchange="changepricepokr();"/> 150Г±Г¬ Гµ 215Г±Г¬ - <div id="price-pokr">3000&nbsp;Г°ГіГЎ.</div><br />
+<input type="radio" name='razmer' value="175Г±Г¬ Гµ 215Г±Г¬ - 3900" onchange="changepricepokr();"/> 175Г±Г¬ Гµ 215Г±Г¬ - <div id="price-pokr">4000&nbsp;Г°ГіГЎ.</div><br />
+<input type="radio" name='razmer' value="215Г±Г¬ Гµ 240Г±Г¬ - 4200" onchange="changepricepokr();"/> 215Г±Г¬ Гµ 240Г±Г¬ - <div id="price-pokr">4300&nbsp;Г°ГіГЎ.</div><br />
 <br /><br />
 <?php 
 }
 
-elseif ($product=="Римские Фотошторы")
+elseif ($product=="ГђГЁГ¬Г±ГЄГЁГҐ Г”Г®ГІГ®ГёГІГ®Г°Г»")
 {
 $row = 1;
 $handle = fopen("prices/opt-rimblackout.csv", "r");
@@ -72,10 +72,10 @@ function changeprice_rim()
 		var visota = $('#VisotaShtor_rim').val();
 		dat = <?php echo json_encode( $dat ); ?>;
 
-		if (mater=='Габардин')
+		if (mater=='ГѓГ ГЎГ Г°Г¤ГЁГ­')
 		{shirina = Number(shirina) + 100;}
 
-		if (mater=='Атлас')
+		if (mater=='ГЂГІГ«Г Г±')
 		{shirina = Number(shirina) + 200;}
 
 
@@ -87,40 +87,40 @@ function changeprice_rim()
 		tsena=parseInt(dat[shirina][visota])+parseInt(nacenka);
 		$('#cena').val(tsena);
 		
-		var endprice="Цена:&nbsp;"+tsena+"&nbsp;руб.";
+		var endprice="Г–ГҐГ­Г :&nbsp;"+tsena+"&nbsp;Г°ГіГЎ.";
 		document.getElementById("price").innerHTML=(endprice);
 }
 </script>
 <br />
 <div style="color:#930; font-size:16px;"><b>
-Выберите материал и размеры<br />римских фотоштор:
+Г‚Г»ГЎГҐГ°ГЁГІГҐ Г¬Г ГІГҐГ°ГЁГ Г« ГЁ Г°Г Г§Г¬ГҐГ°Г»<br />Г°ГЁГ¬Г±ГЄГЁГµ ГґГ®ГІГ®ГёГІГ®Г°:
 </b></div><br />
-<table border="0" cellpadding="0" cellspacing="0" width="400"><tr><th>Материал</th><th>Ширина</th><th>Высота</th></tr>
+<table border="0" cellpadding="0" cellspacing="0" width="400"><tr><th>ГЊГ ГІГҐГ°ГЁГ Г«</th><th>ГГЁГ°ГЁГ­Г </th><th>Г‚Г»Г±Г®ГІГ </th></tr>
 		<tr>
         <td width="150" align="center" style="padding-left:10px;">
         <div class="SKU_Mater">
                 <select class="MaterShtor" id="MaterShtor_rim" onchange="changeprice_rim();">
-                  <option class="Mater" value="Блэкаут" style="display: block;">Блэкаут</option> 
-                  <option class="Mater" value="Атлас" style="display: block;">Атлас</option> 
-                  <option class="Mater" value="Габардин" selected="selected" style="display: block;">Габардин</option>                 
+                  <option class="Mater" value="ГЃГ«ГЅГЄГ ГіГІ" style="display: block;">ГЃГ«ГЅГЄГ ГіГІ</option> 
+                  <option class="Mater" value="ГЂГІГ«Г Г±" style="display: block;">ГЂГІГ«Г Г±</option> 
+                  <option class="Mater" value="ГѓГ ГЎГ Г°Г¤ГЁГ­" selected="selected" style="display: block;">ГѓГ ГЎГ Г°Г¤ГЁГ­</option>                 
                 </select>
             </div>
         </td>
         <td width="140" align="center"><div style="float:left; padding-left:20px;"></div>
             <div class="SKU">
                   <select  class="ShirinaShtor" id="ShirinaShtor_rim" onchange="changeprice_rim();">
-                         <option class="shirina" selected="selected" value="1" style="display: block;">0.6 м</option>                    
-                         <option class="shirina"  value="2" style="display: block;">0.8 м</option>                     
-                         <option class="shirina"  value="3" style="display: block;">1.0 м</option>                       
-                         <option class="shirina"  value="4" style="display: block;">1.2 м</option>
-                         <option class="shirina"  value="5" style="display: block;">1.4 м</option>
+                         <option class="shirina" selected="selected" value="1" style="display: block;">0.6 Г¬</option>                    
+                         <option class="shirina"  value="2" style="display: block;">0.8 Г¬</option>                     
+                         <option class="shirina"  value="3" style="display: block;">1.0 Г¬</option>                       
+                         <option class="shirina"  value="4" style="display: block;">1.2 Г¬</option>
+                         <option class="shirina"  value="5" style="display: block;">1.4 Г¬</option>
                 </select>
             </div>
         </td>
         <td width="110" align="center">
             <div class="SKU">
                 <select class="VisotaShtor" id="VisotaShtor_rim" onchange="changeprice_rim();">
-                    <option class="visota"  selected="selected" value="1" style="display: block;">1.7 м</option>
+                    <option class="visota"  selected="selected" value="1" style="display: block;">1.7 Г¬</option>
                 </select>
             </div>
         </td>
@@ -135,7 +135,7 @@ function changeprice_rim()
 
 <?php }
 
-else  //фотошторы
+else  //ГґГ®ГІГ®ГёГІГ®Г°Г»
 {
 $row = 1;
 $handle = fopen("prices/opt-blackout.csv", "r");
@@ -201,16 +201,16 @@ function changeprice()
 		var visota = $('#VisotaShtor').val();
 		dat = <?php echo json_encode( $dat ); ?>;
 
-		if (mater=='Габардин')
+		if (mater=='ГѓГ ГЎГ Г°Г¤ГЁГ­')
 		{visota = Number(visota) + 100;}
 
-		if (mater=='Атлас')
+		if (mater=='ГЂГІГ«Г Г±')
 		{visota = Number(visota) + 200;}
 
-		if (mater=='Сатен')
+		if (mater=='Г‘Г ГІГҐГ­')
 		{visota = Number(visota) + 300;}
 
-		if (mater=='Вуаль')
+		if (mater=='Г‚ГіГ Г«Гј')
 		{visota = Number(visota) + 400;}
 
 //		document.getElementById("material").value = mater;
@@ -223,15 +223,15 @@ function changeprice()
 		$('#vis').val(vi);
 //		$('#cena').toString(parseInt(dat[visota][shirina])+parseInt(nacenka));
 		var tsena=parseInt(dat[visota][shirina])+parseInt(nacenka);
-		/*if (mater=='Габардин') {var tsena=(parseInt(dat[visota][shirina])*0.85+parseInt(nacenka)).toFixed();}*/
+		/*if (mater=='ГѓГ ГЎГ Г°Г¤ГЁГ­') {var tsena=(parseInt(dat[visota][shirina])*0.85+parseInt(nacenka)).toFixed();}*/
 		$('#cena').val(tsena);
-		var endprice="Цена:&nbsp;"+tsena+"&nbsp;руб.";
-		if (mater=='Вуаль' && shi=='1.5 м') {endprice="<font size='4'>Измените ширину - не более 1,45 м.</font>"}
+		var endprice="Г–ГҐГ­Г :&nbsp;"+tsena+"&nbsp;Г°ГіГЎ.";
+		if (mater=='Г‚ГіГ Г«Гј' && shi=='1.5 Г¬') {endprice="<font size='4'>Г€Г§Г¬ГҐГ­ГЁГІГҐ ГёГЁГ°ГЁГ­Гі - Г­ГҐ ГЎГ®Г«ГҐГҐ 1,45 Г¬.</font>"}
 		document.getElementById("price").innerHTML=(endprice);
 
-/*		if (mater=='Блэкаут' && tsena>=5000 || mater=='Сатен' && tsena>=5000 || mater=='Атлас' && tsena>=5000 || mater=='Габардин' && tsena>=4500 || mater=='Вуаль' && tsena>=4980)
+/*		if (mater=='ГЃГ«ГЅГЄГ ГіГІ' && tsena>=5000 || mater=='Г‘Г ГІГҐГ­' && tsena>=5000 || mater=='ГЂГІГ«Г Г±' && tsena>=5000 || mater=='ГѓГ ГЎГ Г°Г¤ГЁГ­' && tsena>=4500 || mater=='Г‚ГіГ Г«Гј' && tsena>=4980)
 		{	
-		frees="Бесплатная доставка *";
+		frees="ГЃГҐГ±ГЇГ«Г ГІГ­Г Гї Г¤Г®Г±ГІГ ГўГЄГ  *";
 		document.getElementById("freesell").innerHTML=(frees);
 		}
 			else 
@@ -245,25 +245,25 @@ function changeprice()
 <br />
 <div style="color:#930; font-size:16px;"><b>
 <?php 
-if ($product=="Фототюль") {echo "Выберите размеры фототюли:";}
-elseif ($product=="Шторы") {echo "Выберите материал и размеры штор:";}
-else {echo "Выберите материал и размеры фотоштор:";}
+if ($product=="Г”Г®ГІГ®ГІГѕГ«Гј") {echo "Г‚Г»ГЎГҐГ°ГЁГІГҐ Г°Г Г§Г¬ГҐГ°Г» ГґГ®ГІГ®ГІГѕГ«ГЁ:";}
+elseif ($product=="ГГІГ®Г°Г»") {echo "Г‚Г»ГЎГҐГ°ГЁГІГҐ Г¬Г ГІГҐГ°ГЁГ Г« ГЁ Г°Г Г§Г¬ГҐГ°Г» ГёГІГ®Г°:";}
+else {echo "Г‚Г»ГЎГҐГ°ГЁГІГҐ Г¬Г ГІГҐГ°ГЁГ Г« ГЁ Г°Г Г§Г¬ГҐГ°Г» ГґГ®ГІГ®ГёГІГ®Г°:";}
 ?>
 </b></div><br />
-<table border="0" cellpadding="0" cellspacing="0" width="400"><tr><th>Материал</th><th>Ширина</th><th>Высота</th></tr>
+<table border="0" cellpadding="0" cellspacing="0" width="400"><tr><th>ГЊГ ГІГҐГ°ГЁГ Г«</th><th>ГГЁГ°ГЁГ­Г </th><th>Г‚Г»Г±Г®ГІГ </th></tr>
 		<tr>
         <td width="150" align="center" style="padding-left:10px;">
         <div class="SKU_Mater">
                 <select class="MaterShtor" id="MaterShtor" onchange="changeprice();">
-<?php  if ($product=="Фототюль") { ?>
-                  <option class="Mater" value="Вуаль" style="display: block;">Вуаль</option> 
+<?php  if ($product=="Г”Г®ГІГ®ГІГѕГ«Гј") { ?>
+                  <option class="Mater" value="Г‚ГіГ Г«Гј" style="display: block;">Г‚ГіГ Г«Гј</option> 
 <?php }
 else { ?>
-                  <option class="Mater" value="Блэкаут" style="display: block;">Блэкаут</option> 
-                  <option class="Mater" value="Атлас" style="display: block;">Атлас</option> 
-                  <option class="Mater" value="Габардин" selected="selected" style="display: block;">Габардин</option>                 
-                  <option class="Mater" value="Сатен" style="display: block;">Сатен</option>
-                  <option class="Mater" value="Вуаль" style="display: block;">Вуаль</option>                 
+                  <option class="Mater" value="ГЃГ«ГЅГЄГ ГіГІ" style="display: block;">ГЃГ«ГЅГЄГ ГіГІ</option> 
+                  <option class="Mater" value="ГЂГІГ«Г Г±" style="display: block;">ГЂГІГ«Г Г±</option> 
+                  <option class="Mater" value="ГѓГ ГЎГ Г°Г¤ГЁГ­" selected="selected" style="display: block;">ГѓГ ГЎГ Г°Г¤ГЁГ­</option>                 
+                  <option class="Mater" value="Г‘Г ГІГҐГ­" style="display: block;">Г‘Г ГІГҐГ­</option>
+                  <option class="Mater" value="Г‚ГіГ Г«Гј" style="display: block;">Г‚ГіГ Г«Гј</option>                 
             <?php } ?>
                 </select>
             </div>
@@ -271,21 +271,21 @@ else { ?>
         <td width="140" align="center"><div style="float:left; padding-left:20px;">2&nbsp;x</div>
             <div class="SKU">
                   <select  class="ShirinaShtor" id="ShirinaShtor" onchange="changeprice();">
-                         <option class="shirina"  value="1" style="display: block;">1.0 м</option>                      
-                         <option class="shirina"  value="2" style="display: block;">1.05 м</option>                     
-                         <option class="shirina"  value="3" style="display: block;">1.1 м</option>                       
-                         <option class="shirina"  value="4" style="display: block;">1.15 м</option>
-                         <option class="shirina"  value="5" style="display: block;">1.2 м</option>
-                         <option class="shirina"  value="6" style="display: block;">1.25 м</option>
-                         <option class="shirina"  value="7" style="display: block;">1.3 м</option> 
-                         <option class="shirina"  value="8" style="display: block;">1.35 м</option>
-                         <option class="shirina"  value="9" style="display: block;">1.4 м</option>
-<?php  if ($product=="Фототюль") { ?>
-                         <option class="shirina" selected="selected" value="10" style="display: block;">1.45 м</option>
+                         <option class="shirina"  value="1" style="display: block;">1.0 Г¬</option>                      
+                         <option class="shirina"  value="2" style="display: block;">1.05 Г¬</option>                     
+                         <option class="shirina"  value="3" style="display: block;">1.1 Г¬</option>                       
+                         <option class="shirina"  value="4" style="display: block;">1.15 Г¬</option>
+                         <option class="shirina"  value="5" style="display: block;">1.2 Г¬</option>
+                         <option class="shirina"  value="6" style="display: block;">1.25 Г¬</option>
+                         <option class="shirina"  value="7" style="display: block;">1.3 Г¬</option> 
+                         <option class="shirina"  value="8" style="display: block;">1.35 Г¬</option>
+                         <option class="shirina"  value="9" style="display: block;">1.4 Г¬</option>
+<?php  if ($product=="Г”Г®ГІГ®ГІГѕГ«Гј") { ?>
+                         <option class="shirina" selected="selected" value="10" style="display: block;">1.45 Г¬</option>
 <?php }
 else { ?>
-                         <option class="shirina"  value="10" style="display: block;">1.45 м</option>
-                         <option class="shirina" selected="selected" value="11" style="display: block;">1.5 м</option>  
+                         <option class="shirina"  value="10" style="display: block;">1.45 Г¬</option>
+                         <option class="shirina" selected="selected" value="11" style="display: block;">1.5 Г¬</option>  
             <?php } ?>
                 </select>
             </div>
@@ -293,47 +293,47 @@ else { ?>
         <td width="110" align="center">
             <div class="SKU">
                 <select class="VisotaShtor" id="VisotaShtor" onchange="changeprice();">
-                    <option class="visota" value="1" style="display: block;">1.5 м</option>
-                    <option class="visota" value="2" style="display: block;">1.55 м</option>
-                    <option class="visota" value="3" style="display: block;">1.6 м</option>
-                    <option class="visota" value="4" style="display: block;">1.65 м</option>
-                    <option class="visota" value="5" style="display: block;">1.7 м</option>
-                    <option class="visota" value="6" style="display: block;">1.75 м</option>
-                    <option class="visota" value="7" style="display: block;">1.8 м</option>
-                    <option class="visota" value="8" style="display: block;">1.85 м</option>
-                    <option class="visota" value="9" style="display: block;">1.9 м</option>
-                    <option class="visota" value="10" style="display: block;">1.95 м</option>
-                    <option class="visota" value="11" style="display: block;">2 м</option>
-                    <option class="visota" value="12" style="display: block;">2.05 м</option>
-                    <option class="visota" value="13" style="display: block;">2.1 м</option>
-                    <option class="visota" value="14" style="display: block;">2.15 м</option>
-                    <option class="visota" value="15" style="display: block;">2.2 м</option>
-                    <option class="visota" value="16" style="display: block;">2.25 м</option>
-                    <option class="visota" value="17" style="display: block;">2.3 м</option>
-                    <option class="visota" value="18" style="display: block;">2.35 м</option>
-                    <option class="visota" value="19" style="display: block;">2.4 м</option>
-                    <option class="visota" value="20" style="display: block;">2.45 м</option>
-                    <option class="visota" selected="selected" value="21" style="display: block;">2.5 м</option>
-                    <option class="visota" value="22" style="display: block;">2.55 м</option>
-                    <option class="visota" value="23" style="display: block;">2.6 м</option>
-                    <option class="visota" value="24" style="display: block;">2.65 м</option>
-                    <option class="visota" value="25" style="display: block;">2.7 м</option>
-                    <option class="visota" value="26" style="display: block;">2.75 м</option>
-                    <option class="visota" value="27" style="display: block;">2.8 м</option>
-                    <option class="visota" value="28" style="display: block;">2.85 м</option>
-                    <option class="visota" value="29" style="display: block;">2.9 м</option>
-                    <option class="visota" value="30" style="display: block;">2.95 м</option>
-                    <option class="visota" value="31" style="display: block;">3 м</option>
-                    <option class="visota" value="32" style="display: block;">3.05 м</option>
-                    <option class="visota" value="33" style="display: block;">3.1 м</option>
-                    <option class="visota" value="34" style="display: block;">3.15 м</option>
-                    <option class="visota" value="35" style="display: block;">3.2 м</option>
-                    <option class="visota" value="36" style="display: block;">3.25 м</option>
-                    <option class="visota" value="37" style="display: block;">3.3 м</option>
-                    <option class="visota" value="38" style="display: block;">3.35 м</option>
-                    <option class="visota" value="39" style="display: block;">3.4 м</option>
-                    <option class="visota" value="40" style="display: block;">3.45 м</option>
-                    <option class="visota" value="41" style="display: block;">3.5 м</option>
+                    <option class="visota" value="1" style="display: block;">1.5 Г¬</option>
+                    <option class="visota" value="2" style="display: block;">1.55 Г¬</option>
+                    <option class="visota" value="3" style="display: block;">1.6 Г¬</option>
+                    <option class="visota" value="4" style="display: block;">1.65 Г¬</option>
+                    <option class="visota" value="5" style="display: block;">1.7 Г¬</option>
+                    <option class="visota" value="6" style="display: block;">1.75 Г¬</option>
+                    <option class="visota" value="7" style="display: block;">1.8 Г¬</option>
+                    <option class="visota" value="8" style="display: block;">1.85 Г¬</option>
+                    <option class="visota" value="9" style="display: block;">1.9 Г¬</option>
+                    <option class="visota" value="10" style="display: block;">1.95 Г¬</option>
+                    <option class="visota" value="11" style="display: block;">2 Г¬</option>
+                    <option class="visota" value="12" style="display: block;">2.05 Г¬</option>
+                    <option class="visota" value="13" style="display: block;">2.1 Г¬</option>
+                    <option class="visota" value="14" style="display: block;">2.15 Г¬</option>
+                    <option class="visota" value="15" style="display: block;">2.2 Г¬</option>
+                    <option class="visota" value="16" style="display: block;">2.25 Г¬</option>
+                    <option class="visota" value="17" style="display: block;">2.3 Г¬</option>
+                    <option class="visota" value="18" style="display: block;">2.35 Г¬</option>
+                    <option class="visota" value="19" style="display: block;">2.4 Г¬</option>
+                    <option class="visota" value="20" style="display: block;">2.45 Г¬</option>
+                    <option class="visota" selected="selected" value="21" style="display: block;">2.5 Г¬</option>
+                    <option class="visota" value="22" style="display: block;">2.55 Г¬</option>
+                    <option class="visota" value="23" style="display: block;">2.6 Г¬</option>
+                    <option class="visota" value="24" style="display: block;">2.65 Г¬</option>
+                    <option class="visota" value="25" style="display: block;">2.7 Г¬</option>
+                    <option class="visota" value="26" style="display: block;">2.75 Г¬</option>
+                    <option class="visota" value="27" style="display: block;">2.8 Г¬</option>
+                    <option class="visota" value="28" style="display: block;">2.85 Г¬</option>
+                    <option class="visota" value="29" style="display: block;">2.9 Г¬</option>
+                    <option class="visota" value="30" style="display: block;">2.95 Г¬</option>
+                    <option class="visota" value="31" style="display: block;">3 Г¬</option>
+                    <option class="visota" value="32" style="display: block;">3.05 Г¬</option>
+                    <option class="visota" value="33" style="display: block;">3.1 Г¬</option>
+                    <option class="visota" value="34" style="display: block;">3.15 Г¬</option>
+                    <option class="visota" value="35" style="display: block;">3.2 Г¬</option>
+                    <option class="visota" value="36" style="display: block;">3.25 Г¬</option>
+                    <option class="visota" value="37" style="display: block;">3.3 Г¬</option>
+                    <option class="visota" value="38" style="display: block;">3.35 Г¬</option>
+                    <option class="visota" value="39" style="display: block;">3.4 Г¬</option>
+                    <option class="visota" value="40" style="display: block;">3.45 Г¬</option>
+                    <option class="visota" value="41" style="display: block;">3.5 Г¬</option>
                 </select>
                 
             </div>
@@ -343,7 +343,7 @@ else { ?>
 <div id="price"></div><br />
 <div id="freesell" class="freesell">&nbsp;</div>
 <?php  
-if ($category=="Для кухни" || $category=="Кухня")
+if ($category=="Г„Г«Гї ГЄГіГµГ­ГЁ" || $category=="ГЉГіГµГ­Гї")
 { ?>
 	<script language="javascript" type="text/javascript">
 	$("#ShirinaShtor option[value='1']").prop("selected", true);
